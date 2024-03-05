@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import RecipeItem from "./RecipeItem";
-import { BASE_DB_URL } from "../firebaseConfig";
+import { BASE_DB_URL } from "../config/firebaseConfig";
 import { useSelector, useDispatch } from 'react-redux';
 import { resetChangeFlag } from '../slices/recipesSlice';
 

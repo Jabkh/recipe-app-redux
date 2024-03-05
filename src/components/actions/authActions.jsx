@@ -1,5 +1,5 @@
 import { setAuthMode, setUser, removeUser } from './slices/authSlice';
-import { SIGN_IN_URL, SIGN_UP_URL } from '../../firebaseConfig';
+import { SIGN_IN_URL, SIGN_UP_URL } from '../../config/firebaseConfig';
 import axios from 'axios';
 
 export const loginUser = async (dispatch, email, password) => {

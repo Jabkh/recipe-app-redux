@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-import { BASE_DB_URL } from "../firebaseConfig";
+import { BASE_DB_URL } from "../config/firebaseConfig";
 import { addRecipe } from "../slices/recipesSlice";
 
 const RecipeForm = () => {

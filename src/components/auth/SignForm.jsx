@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthMode, setUser } from '../../slices/authSlice';
-import { SIGN_IN_URL, SIGN_UP_URL } from '../../firebaseConfig';
+import { SIGN_IN_URL, SIGN_UP_URL } from '../../config/firebaseConfig';
 import axios from 'axios';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
