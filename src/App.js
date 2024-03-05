@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import { setUser } from './slices/authSlice';
+import AppRouter from './router';
+// import { auth } from './services/firebase'; // Assurez-vous que firebaseConfig est correctement exporté dans ce fichier
 
 function App() {
+
+  const user = useSelector((state) => state.auth.user);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Récupérer les informations d'utilisateur depuis le localStorage
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      // Stocker l'utilisateur dans le store Redux
+      dispatch(setUser(JSON.parse(storedUser)));
+    }
+  }, [dispatch]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppRouter user={user}/>
   );
 }
 
